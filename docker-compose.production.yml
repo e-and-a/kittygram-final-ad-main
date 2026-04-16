@@ -13,7 +13,7 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   backend:
-    image: relax1205/kittygram_backend
+    image: eanda/kittygram_backend
     env_file: .env
     depends_on:
       - db
@@ -22,7 +22,7 @@ services:
       - media:/app/media
 
   frontend:
-    image: relax1205/kittygram_frontend
+    image: eanda/kittygram_frontend
     env_file: .env
     depends_on:
       - backend  
@@ -31,7 +31,7 @@ services:
       - static:/static
 
   gateway:
-    image: relax1205/kittygram_gateway
+    image: eanda/kittygram_gateway
     env_file: .env
     depends_on:
       - frontend  
